@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "axios": "^0.17.0",
+    "babel-preset-env": "^1.6.1",
+    "babel-register": "^6.26.0",
     "bulma": "^0.6.1",
     "font-awesome": "^4.7.0",
     "prop-types": "^15.6.0",
@@ -19,7 +21,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test --env=jsdom",
+    "test": "mocha --require babel-register ./spec/*",
     "eject": "react-scripts eject"
   },
   "devDependencies": {
