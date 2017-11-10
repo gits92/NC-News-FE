@@ -1,7 +1,9 @@
 import React, { Component } from "react";
 import { BrowserRouter, Route, Switch } from "react-router-dom";
-
+import ArticleCard from "./ArticleCard";
+import Navbar from "./Navbar";
 import Homepage from "./Homepage";
+import Topic from "./Topic";
 import "./App.css";
 
 class App extends Component {
@@ -10,14 +12,15 @@ class App extends Component {
       <BrowserRouter>
         <div className="App">
           <header className="App-header">
-            <h1 className="App-title">Welcome to React</h1>
+            <Navbar />
+            <Topic />
+            <h1 className="App-title">Welcome to Northcoders News</h1>
           </header>
-          <p className="App-intro">
-            To get started, edit <code>src/App.js</code> and save to reload.
-          </p>
 
           <Switch>
             <Route exact path="/" component={Homepage} />
+            <Route exact path="/articles/:id" component={ArticleCard} />
+            <Route exact path="/topics" component={Topic} />
           </Switch>
         </div>
       </BrowserRouter>

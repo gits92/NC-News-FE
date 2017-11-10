@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import PT from "prop-types";
+import { NavLink } from "react-router-dom";
 
 import fetchArticles from "../actions/articles.action";
 
@@ -16,9 +17,13 @@ class Homepage extends React.Component {
     const { articles, loading, error } = this.props;
     return (
       <div className="container">
-        {articles.map(article => {
-          return <div className="box">{article.title}</div>;
-        })}
+        {articles.map(article => (
+          <li key={article._id} className="box">
+            <NavLink to={`/articles/${article._id}`} key={article._id}>
+              {article.title}
+            </NavLink>
+          </li>
+        ))}
       </div>
     );
   }
