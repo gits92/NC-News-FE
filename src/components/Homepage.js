@@ -4,6 +4,7 @@ import PT from "prop-types";
 import { NavLink } from "react-router-dom";
 
 import fetchArticles from "../actions/articles.action";
+import fetchTopicArticles from "../actions/topicArticles.action";
 
 class Homepage extends React.Component {
   constructor(props) {

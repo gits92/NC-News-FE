@@ -6,7 +6,7 @@ import {
   fetchTopicsFailure
 } from "../src/actions/topics.action";
 
-describe.only("Topics reducer", () => {
+describe("Topics reducer", () => {
   describe("default behaviour", () => {
     it("returns the passed previous state if an unrecognised action is passed", () => {
       const action = { type: "whatever" };
