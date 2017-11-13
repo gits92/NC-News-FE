@@ -22,14 +22,21 @@ class TopicArticles extends React.Component {
         HELLO
         {topicArticles.map(topicArticle => {
           return (
-            <div className="box">
-              <strong>{topicArticle.title} </strong>
-              <p>{topicArticle.body}</p>
-              <p>
-                <small>{topicArticle.created_by}</small>
-              </p>
-              <p>{topicArticle.votes}</p>
-            </div>
+            <li key={topicArticle._id} className="box">
+              <div className="box">
+                <NavLink
+                  to={`/articles/${topicArticle._id}`}
+                  key={topicArticle._id}
+                >
+                  <strong>{topicArticle.title} </strong>
+                  <p>{topicArticle.body}</p>
+                  <p>
+                    <small>{topicArticle.created_by}</small>
+                  </p>
+                  <p>{topicArticle.votes}</p>
+                </NavLink>
+              </div>
+            </li>
           );
         })}
       </div>

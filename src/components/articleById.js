@@ -1,8 +1,8 @@
 import React from "react";
 import { connect } from "react-redux";
-import fetchArticleById from "../actions/articleById.action";
+import fetchArticleById from "../actions/articleCard.action";
 
-class ArticleCard extends React.Component {
+class ArticleById extends React.Component {
   constructor(props) {
     super(props);
   }
@@ -34,9 +34,9 @@ class ArticleCard extends React.Component {
   }
 }
 const mapStateToProps = state => ({
-  articleById: state.articleById.data,
-  loading: state.articleById.loading,
-  error: state.articleById.error
+  articleById: state.ArticleById.data,
+  loading: state.ArticleById.loading,
+  error: state.ArticleById.error
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -45,4 +45,4 @@ const mapDispatchToProps = dispatch => ({
   }
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(ArticleCard);
+export default connect(mapStateToProps, mapDispatchToProps)(ArticleById);
