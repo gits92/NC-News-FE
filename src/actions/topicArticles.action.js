@@ -23,7 +23,6 @@ export default topicName => {
     return axios
       .get(`${API_URL}/topics/${topicName}/articles`)
       .then(res => {
-        console.log(res, "HELLOOOOO");
         dispatch(fetchTopicArticlesSuccess(res.data.articles));
       })
       .catch(error => {
