@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import fetchArticleById from "../actions/articleById.action";
+import fetchComments from "../actions/comments.action";
 
 class ArticleCard extends React.Component {
   constructor(props) {
@@ -8,6 +9,7 @@ class ArticleCard extends React.Component {
   }
   componentDidMount() {
     this.props.fetchArticleById(this.props.match.params.id);
+    this.props.fetchComments(this.props.match.params.id);
   }
   render() {
     return (
@@ -29,6 +31,14 @@ class ArticleCard extends React.Component {
             }
           }
         })}
+        <br />
+        {this.props.comments.map(comment => {
+          return (
+            <div className="box">
+              <p>{comment.body}</p>
+            </div>
+          );
+        })}
       </div>
     );
   }
@@ -36,12 +46,16 @@ class ArticleCard extends React.Component {
 const mapStateToProps = state => ({
   articleById: state.articleById.data,
   loading: state.articleById.loading,
-  error: state.articleById.error
+  error: state.articleById.error,
+  comments: state.comments.data
 });
 
 const mapDispatchToProps = dispatch => ({
   fetchArticleById: id => {
     dispatch(fetchArticleById(id));
+  },
+  fetchComments: id => {
+    dispatch(fetchComments(id));
   }
 });
 
