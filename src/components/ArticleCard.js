@@ -4,9 +4,6 @@ import fetchArticleById from "../actions/articleById.action";
 import fetchComments from "../actions/comments.action";
 
 class ArticleCard extends React.Component {
-  constructor(props) {
-    super(props);
-  }
   componentDidMount() {
     this.props.fetchArticleById(this.props.match.params.id);
     this.props.fetchComments(this.props.match.params.id);
@@ -36,7 +33,8 @@ class ArticleCard extends React.Component {
           {this.props.comments.map(comment => {
             return (
               <div className="box">
-                <p>{comment.body}</p>
+                HELLO
+                {/* <p>{comment.body}</p> */}
               </div>
             );
           })}
@@ -46,10 +44,10 @@ class ArticleCard extends React.Component {
   }
 }
 const mapStateToProps = state => ({
+  comments: state.comments.data,
   articleById: state.articleById.data,
   loading: state.articleById.loading,
-  error: state.articleById.error,
-  comments: state.comments.data
+  error: state.articleById.error
 });
 
 const mapDispatchToProps = dispatch => ({

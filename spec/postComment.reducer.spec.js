@@ -6,7 +6,7 @@ import {
   postCommentFailure
 } from "../src/actions/postComment.action";
 
-describe.only("postComment reducer", () => {
+describe("postComment reducer", () => {
   describe("default behaviour", () => {
     it("returns the passed previous state if an unrecognised action is passed", () => {
       const action = { type: "whatever" };

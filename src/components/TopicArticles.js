@@ -20,25 +20,29 @@ class TopicArticles extends React.Component {
     return (
       <div>
         HELLO
-        {topicArticles.map(topicArticle => {
-          return (
-            <li key={topicArticle._id} className="box">
-              <div className="box">
-                <NavLink
-                  to={`/articles/${topicArticle._id}`}
-                  key={topicArticle._id}
-                >
-                  <strong>{topicArticle.title} </strong>
+        {topicArticles
+          .sort(function(a, b) {
+            return b.votes - a.votes;
+          })
+          .map(topicArticle => {
+            return (
+              <li key={topicArticle._id} className="box">
+                <div className="box">
+                  <NavLink
+                    to={`/articles/${topicArticle._id}`}
+                    key={topicArticle._id}
+                  >
+                    <strong>{topicArticle.title} </strong>
 
-                  <p>
-                    <small>{topicArticle.created_by}</small>
-                  </p>
-                  <p>{topicArticle.votes}</p>
-                </NavLink>
-              </div>
-            </li>
-          );
-        })}
+                    <p>
+                      <small>{topicArticle.created_by}</small>
+                    </p>
+                    <p>{topicArticle.votes}</p>
+                  </NavLink>
+                </div>
+              </li>
+            );
+          })}
       </div>
     );
   }
