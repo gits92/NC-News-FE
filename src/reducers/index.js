@@ -4,7 +4,7 @@ import articles from "./articles.reducer";
 import articleById from "./articleCard.reducer";
 import topics from "./topics.reducer";
 import topicArticles from "./topicArticles.reducer";
-import comments from "./comments.reducer";
+import comments from "./postComment.reducer";
 
 const reducer = combineReducers({
   topics,

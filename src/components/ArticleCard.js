@@ -32,13 +32,15 @@ class ArticleCard extends React.Component {
           }
         })}
         <br />
-        {this.props.comments.map(comment => {
-          return (
-            <div className="box">
-              <p>{comment.body}</p>
-            </div>
-          );
-        })}
+        <section>
+          {this.props.comments.map(comment => {
+            return (
+              <div className="box">
+                <p>{comment.body}</p>
+              </div>
+            );
+          })}
+        </section>
       </div>
     );
   }

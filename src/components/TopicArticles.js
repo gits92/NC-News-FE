@@ -29,7 +29,7 @@ class TopicArticles extends React.Component {
                   key={topicArticle._id}
                 >
                   <strong>{topicArticle.title} </strong>
-                  <p>{topicArticle.body}</p>
+
                   <p>
                     <small>{topicArticle.created_by}</small>
                   </p>

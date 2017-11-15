@@ -18,7 +18,7 @@ describe("async action creators", () => {
     nock.cleanAll();
   });
   describe("fetchTopicArticles", () => {
-    it("dispatches FETCH_TOPIC_ARTICLES_SUCCESS when fetching ArticleById reponds with 200 and data", () => {
+    it("dispatches FETCH_TOPIC_ARTICLES_SUCCESS when fetching topic articles reponds with 200 and data", () => {
       nock(API_URL)
         .get(`/topics/${topic}/articles`)
         .reply(200, { articles: [1, 2, 3] });
@@ -34,7 +34,7 @@ describe("async action creators", () => {
         expect(store.getActions()).to.eql(expectedActions);
       });
     });
-    it("dispatches FETCH_TOPIC_ARTICLES_FAILURE when fetching ArticleById reponds with an error", () => {
+    it("dispatches FETCH_TOPIC_ARTICLES_FAILURE when fetching topic articles reponds with an error", () => {
       nock(API_URL)
         .get(`/topics/${topic}/articles`)
         .replyWithError({ message: "error" });
