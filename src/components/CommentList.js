@@ -1,4 +1,5 @@
 import React from "react";
+import VoteUpDown from "./Votes";
 
 class CommentList extends React.Component {
   constructor(props) {
@@ -21,6 +22,7 @@ class CommentList extends React.Component {
         </p>
 
         <p>
+          <VoteUpDown votes={comment.votes} />
           <small>{comment.votes}</small>
         </p>
         <p>

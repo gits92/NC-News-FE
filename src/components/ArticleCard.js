@@ -3,6 +3,7 @@ import { connect } from "react-redux";
 import fetchArticleById from "../actions/articleById.action";
 import fetchComments from "../actions/comments.action";
 import deleteComment from "../actions/deleteComment.action";
+import VoteUpDown from "./Votes";
 import CommentForm from "./CommentForm";
 import CommentList from "./CommentList";
 import axios from "axios";

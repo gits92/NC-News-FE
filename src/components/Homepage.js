@@ -2,7 +2,7 @@ import React from "react";
 import { connect } from "react-redux";
 import PT from "prop-types";
 import { NavLink } from "react-router-dom";
-
+import VoteUpDown from "./Votes";
 import fetchArticles from "../actions/articles.action";
 import fetchTopicArticles from "../actions/topicArticles.action";
 
@@ -24,6 +24,7 @@ class Homepage extends React.Component {
           })
           .map(article => (
             <li key={article._id} className="box">
+              <VoteUpDown votes={article.votes} />
               <NavLink to={`/articles/${article._id}`} key={article._id}>
                 <strong>{article.title} </strong> <p>{article.votes}</p>
               </NavLink>
