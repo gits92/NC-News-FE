@@ -2,7 +2,9 @@ import React from "react";
 import { connect } from "react-redux";
 import fetchArticleById from "../actions/articleById.action";
 import fetchComments from "../actions/comments.action";
+import deleteComment from "../actions/deleteComment.action";
 import CommentForm from "./CommentForm";
+import CommentList from "./CommentList";
 import axios from "axios";
 const API_URL = "https://s-sharda-nc.herokuapp.com/api";
 
@@ -14,6 +16,15 @@ class ArticleCard extends React.Component {
   componentDidMount() {
     this.props.fetchArticleById(this.props.match.params.id);
     this.props.fetchComments(this.props.match.params.id);
+  }
+
+  componentWillReceiveProps(nextProps) {
+    if (
+      this.props.comment.length === nextProps.comment.length &&
+      this.props.comment.length > 0
+    ) {
+      this.props.fetchComments(this.props.match.params.id);
+    }
   }
 
   handleNewCommentSubmit(comment) {
@@ -68,16 +79,10 @@ class ArticleCard extends React.Component {
             })
             .map(comment => {
               return (
-                <div className="box">
-                  <p>{comment.body}</p>
-                  <p>
-                    <small>{comment.created_by}</small>
-                  </p>
-
-                  <p>
-                    <small>{comment.votes}</small>
-                  </p>
-                </div>
+                <CommentList
+                  comment={comment}
+                  deleteComment={this.props.deleteComment}
+                />
               );
             })}
         </div>
@@ -89,7 +94,8 @@ const mapStateToProps = state => ({
   comment: state.comments.data,
   articleById: state.articleById.data,
   loading: state.articleById.loading,
-  error: state.articleById.error
+  error: state.articleById.error,
+  deleteState: state.deleteComment.data
 });
 
 const mapDispatchToProps = dispatch => ({
@@ -98,6 +104,9 @@ const mapDispatchToProps = dispatch => ({
   },
   fetchComments: id => {
     dispatch(fetchComments(id));
+  },
+  deleteComment: id => {
+    dispatch(deleteComment(id));
   }
 });
 
