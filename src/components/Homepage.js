@@ -18,13 +18,17 @@ class Homepage extends React.Component {
     const { articles, loading, error } = this.props;
     return (
       <div className="container">
-        {articles.map(article => (
-          <li key={article._id} className="box">
-            <NavLink to={`/articles/${article._id}`} key={article._id}>
-              {article.title}
-            </NavLink>
-          </li>
-        ))}
+        {articles
+          .sort(function(a, b) {
+            return b.votes - a.votes;
+          })
+          .map(article => (
+            <li key={article._id} className="box">
+              <NavLink to={`/articles/${article._id}`} key={article._id}>
+                <strong>{article.title} </strong> <p>{article.votes}</p>
+              </NavLink>
+            </li>
+          ))}
       </div>
     );
   }

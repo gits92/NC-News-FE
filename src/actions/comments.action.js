@@ -23,7 +23,6 @@ export default id => {
     return axios
       .get(`${API_URL}/articles/${id}/comments`)
       .then(res => {
-        console.log(res.data.comment, "YOYOYOYOYOYO");
         dispatch(fetchCommentsSuccess(res.data.comment));
       })
       .catch(error => {
