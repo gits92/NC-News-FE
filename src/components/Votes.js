@@ -1,4 +1,5 @@
 import React from "react";
+import "./Votes.css";
 
 class VoteUpDown extends React.Component {
   constructor() {
@@ -20,7 +21,7 @@ class VoteUpDown extends React.Component {
 
   render() {
     return (
-      <div>
+      <div id="votebox">
         <div>{this.state.score}</div>
         <button className="countUp" onClick={this.increment}>
           UP

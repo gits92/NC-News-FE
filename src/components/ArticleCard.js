@@ -59,7 +59,8 @@ class ArticleCard extends React.Component {
                   <p>
                     <small>{article.created_by}</small>
                   </p>
-                  <p>{article.votes}</p>
+                  {/* <p>{article.votes}</p> */}
+                  <VoteUpDown votes={article.votes} />
                   <br />
                   <section>
                     <CommentForm

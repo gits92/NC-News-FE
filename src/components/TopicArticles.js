@@ -3,6 +3,7 @@ import PT from "prop-types";
 import { connect } from "react-redux";
 import { Redirect, NavLink } from "react-router-dom";
 import fetchTopicArticles from "../actions/topicArticles.action";
+import VoteUpDown from "./Votes";
 
 class TopicArticles extends React.Component {
   componentDidMount() {
@@ -19,7 +20,6 @@ class TopicArticles extends React.Component {
     const { topicArticles, loading, error } = this.props;
     return (
       <div>
-        HELLO
         {topicArticles
           .sort(function(a, b) {
             return b.votes - a.votes;
@@ -27,6 +27,7 @@ class TopicArticles extends React.Component {
           .map(topicArticle => {
             return (
               <li key={topicArticle._id} className="box">
+                <VoteUpDown votes={topicArticle.votes} />
                 <div className="box">
                   <NavLink
                     to={`/articles/${topicArticle._id}`}
@@ -37,7 +38,8 @@ class TopicArticles extends React.Component {
                     <p>
                       <small>{topicArticle.created_by}</small>
                     </p>
-                    <p>{topicArticle.votes}</p>
+
+                    {/* <p>{topicArticle.votes}</p> */}
                   </NavLink>
                 </div>
               </li>
