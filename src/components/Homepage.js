@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import VoteUpDown from "./Votes";
 import fetchArticles from "../actions/articles.action";
 import fetchTopicArticles from "../actions/topicArticles.action";
+import "./Homepage.css";
 
 class Homepage extends React.Component {
   constructor(props) {
@@ -26,7 +27,9 @@ class Homepage extends React.Component {
             <li key={article._id} className="box">
               <VoteUpDown votes={article.votes} />
               <NavLink to={`/articles/${article._id}`} key={article._id}>
-                <strong>{article.title} </strong>
+                <strong className="center" id="hometext">
+                  {article.title}{" "}
+                </strong>
                 {/* <p>{article.votes}</p> */}
               </NavLink>
             </li>

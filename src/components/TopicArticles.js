@@ -4,6 +4,7 @@ import { connect } from "react-redux";
 import { Redirect, NavLink } from "react-router-dom";
 import fetchTopicArticles from "../actions/topicArticles.action";
 import VoteUpDown from "./Votes";
+import "./TopicArticles.css";
 
 class TopicArticles extends React.Component {
   componentDidMount() {
@@ -27,13 +28,13 @@ class TopicArticles extends React.Component {
           .map(topicArticle => {
             return (
               <li key={topicArticle._id} className="box">
-                <VoteUpDown votes={topicArticle.votes} />
                 <div className="box">
+                  <VoteUpDown id="votetopics" votes={topicArticle.votes} />
                   <NavLink
                     to={`/articles/${topicArticle._id}`}
                     key={topicArticle._id}
                   >
-                    <strong>{topicArticle.title} </strong>
+                    <strong id="topicarticle">{topicArticle.title} </strong>
 
                     <p>
                       <small>{topicArticle.created_by}</small>

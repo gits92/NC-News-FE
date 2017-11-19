@@ -22,12 +22,22 @@ class VoteUpDown extends React.Component {
   render() {
     return (
       <div id="votebox">
-        <div>{this.state.score}</div>
-        <button className="countUp" onClick={this.increment}>
-          UP
+        {/* <a className="button is-succes">Vote Up</a>
+        <a className="button is-danger">Vote Down</a> */}
+        <button
+          id="upbutton"
+          className="button is-info"
+          onClick={this.increment}
+        >
+          Vote Up
         </button>
-        <button className="countDown" onClick={this.decrement}>
-          DOWN
+        <small id="votescore"> {this.state.score} </small>
+        <button
+          id="downbutton"
+          className="button is-danger"
+          onClick={this.decrement}
+        >
+          Vote Down
         </button>
       </div>
     );

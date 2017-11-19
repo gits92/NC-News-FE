@@ -1,0 +1,13 @@
+#topicarticle {
+  position: relative;
+  right: 85px;
+  text-align: center;
+  height: 60px;
+  line-height: 60px;
+}
+
+#votetopics {
+  position: absolute;
+  top: top();
+  text-align: center;
+}
