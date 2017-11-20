@@ -12,6 +12,7 @@ $git clone https://github.com/gits92/NC-News-FE.git
 change into the directory that you've cloned into
 
 $npm install
+,
 then
 
 $npm start
@@ -25,9 +26,9 @@ $npm test
 
 # Tech Used:
 
-React
-Redux
+React,
+Redux,
 Bulma (CSS)
 
-{Mocha
+{Mocha,
 Chai} - For testing.
