@@ -69,6 +69,7 @@ class ArticleCard extends React.Component {
                       handleSubmit={this.handleNewCommentSubmit}
                     />
                   </section>
+                  <br />
                 </div>
               );
             }

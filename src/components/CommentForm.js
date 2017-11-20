@@ -1,6 +1,7 @@
 import React from "react";
 import { connect } from "react-redux";
 import axios from "axios";
+import "./CommentForm.css";
 
 const API_URL = "https://s-sharda-nc.herokuapp.com/api";
 
@@ -43,7 +44,13 @@ class CommentForm extends React.Component {
               value={this.state.newComment.comment}
             />
           </div>
-          <input type="submit" value="Submit" />
+          <input
+            id="submitbutton"
+            className="button is-success"
+            type="submit"
+            value="Submit"
+          />
+          {/* <input type="submit" value="Submit" /> */}
         </form>
       </div>
     );
