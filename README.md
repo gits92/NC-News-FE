@@ -8,16 +8,26 @@ Instructions for running/viewing locally:
 
 Enter the following in your terminal:
 
-"git clone https://github.com/gits92/NC-News-FE.git"
+$git clone https://github.com/gits92/NC-News-FE.git
 change into the directory that you've cloned into
 
-"npm install"
+$npm install
 then
 
-"npm start"
+$npm start
 
 
 
 If you would like to see the tests running please run the following:
 
-"npm test"
+$npm test
+
+
+# Tech Used:
+
+React
+Redux
+Bulma (CSS)
+
+{Mocha
+Chai} - For testing.
