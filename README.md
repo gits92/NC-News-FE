@@ -15,7 +15,7 @@ change into the directory that you've cloned into
 then
 
 "npm start"
-and navigate to the following URL in your browser.
+
 
 
 If you would like to see the tests running please run the following:
