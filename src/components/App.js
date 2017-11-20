@@ -6,6 +6,7 @@ import Homepage from "./Homepage";
 import Topic from "./Topic";
 import TopicArticles from "./TopicArticles";
 import "./App.css";
+import NoMatch from "./NoMatch";
 
 class App extends Component {
   render() {
@@ -27,6 +28,7 @@ class App extends Component {
               path="/topics/:topic/articles"
               component={TopicArticles}
             />
+            <Route component={NoMatch} />
           </Switch>
         </div>
       </BrowserRouter>

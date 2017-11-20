@@ -1,5 +1,6 @@
 import React from "react";
 import VoteUpDown from "./Votes";
+import "./CommentList.css";
 
 class CommentList extends React.Component {
   constructor(props) {
@@ -17,16 +18,16 @@ class CommentList extends React.Component {
     return (
       <div className="box">
         <p>{comment.body}</p>
+
         <p>
           <small>{comment.created_by}</small>
         </p>
 
         <p>
           <VoteUpDown votes={comment.votes} />
-          <small>{comment.votes}</small>
-        </p>
-        <p>
+          <small> .</small>
           <input
+            id="deletebutton"
             type="submit"
             className="button is-danger is-outlined"
             value="Delete"
@@ -34,6 +35,7 @@ class CommentList extends React.Component {
             onClick={this.handleDeleteSubmit}
           />
         </p>
+        <p />
       </div>
     );
   }

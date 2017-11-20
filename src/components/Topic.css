@@ -1,0 +1,13 @@
+#topictitles {
+  position: relative;
+  right: 50px;
+  bottom: 15px;
+  font-size: 1.5em;
+  font-family: sans-serif;
+  color: black;
+  font-weight: bold;
+  text-align: center;
+}
+#topictitles:hover {
+  color: white;
+}

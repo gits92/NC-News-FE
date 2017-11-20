@@ -4,6 +4,15 @@
   text-align: center;
   height: 60px;
   line-height: 60px;
+  color: black;
+}
+
+#topicarticle:hover {
+  color: red;
+}
+
+#topiccreate {
+  color: black;
 }
 
 #votetopics {

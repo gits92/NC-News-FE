@@ -37,7 +37,7 @@ class TopicArticles extends React.Component {
                     <strong id="topicarticle">{topicArticle.title} </strong>
 
                     <p>
-                      <small>{topicArticle.created_by}</small>
+                      <small id="topiccreate">{topicArticle.created_by}</small>
                     </p>
 
                     {/* <p>{topicArticle.votes}</p> */}

@@ -12,11 +12,17 @@
   height: 150px;
   padding: 20px;
   color: white;
-  background-image: "https://timesofislamabad.com/wp-content/uploads/2017/05/media_center.jpg";
+  background-size: 1280px 150px;
+  background-size: no-repeat;
+  background-image: url("http://www.ois-ndt.com/uploads/News-Banner-7148.jpg");
 }
 
 .App-title {
-  font-size: 1.5em;
+  position: relative;
+  right: 30px;
+  font-size: 3.5em;
+  color: black;
+  font-family: Courier New, Courier, monospace;
 }
 
 .App-intro {

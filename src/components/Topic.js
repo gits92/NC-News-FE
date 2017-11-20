@@ -3,6 +3,7 @@ import PT from "prop-types";
 import { connect } from "react-redux";
 import { Redirect, NavLink } from "react-router-dom";
 import fetchTopics from "../actions/topics.action";
+import "./Topic.css";
 
 class Topic extends React.Component {
   constructor(props) {
@@ -18,7 +19,7 @@ class Topic extends React.Component {
       <div>
         {topics.map(topic => {
           return (
-            <NavLink to={`/topics/${topic.title}/articles`}>
+            <NavLink id="topictitles" to={`/topics/${topic.title}/articles`}>
               {topic.title}{" "}
             </NavLink>
           );
