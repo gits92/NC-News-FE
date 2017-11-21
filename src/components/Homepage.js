@@ -5,6 +5,7 @@ import { NavLink } from "react-router-dom";
 import VoteUpDown from "./Votes";
 import fetchArticles from "../actions/articles.action";
 import fetchTopicArticles from "../actions/topicArticles.action";
+import Loader from "./Loading";
 import "./Homepage.css";
 
 class Homepage extends React.Component {
@@ -16,6 +17,7 @@ class Homepage extends React.Component {
   }
 
   render() {
+    if (!this.doneLoading()) return <Loader />;
     const { articles, loading, error } = this.props;
     return (
       <div className="container">
@@ -36,6 +38,9 @@ class Homepage extends React.Component {
           ))}
       </div>
     );
+  }
+  doneLoading() {
+    return this.props.articles.length;
   }
 }
 
