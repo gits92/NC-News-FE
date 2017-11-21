@@ -6,7 +6,7 @@ import {
   fetchCommentsFailure
 } from "../src/actions/comments.action";
 
-describe.only("comments reducer", () => {
+describe("comments reducer", () => {
   describe("default behaviour", () => {
     it("returns the passed previous state if an unrecognised action is passed", () => {
       const action = { type: "whatever" };
