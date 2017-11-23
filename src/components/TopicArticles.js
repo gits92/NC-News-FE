@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Redirect, NavLink } from "react-router-dom";
 import fetchTopicArticles from "../actions/topicArticles.action";
 import VoteUpDown from "./Votes";
-import "./TopicArticles.css";
+// import "./TopicArticles.css";
 
 class TopicArticles extends React.Component {
   componentDidMount() {
@@ -21,29 +21,42 @@ class TopicArticles extends React.Component {
     const { topicArticles, loading, error } = this.props;
     return (
       <div>
+        <br />
         {topicArticles
           .sort(function(a, b) {
             return b.votes - a.votes;
           })
           .map(topicArticle => {
             return (
-              <li key={topicArticle._id} className="box">
-                <div className="box">
+              <div className="columns" key={topicArticle._id}>
+                <div
+                  className="box"
+                  style={{ marginTop: "1%", marginBottom: "5%" }}
+                >
                   <VoteUpDown id="votetopics" votes={topicArticle.votes} />
-                  <NavLink
-                    to={`/articles/${topicArticle._id}`}
-                    key={topicArticle._id}
-                  >
-                    <strong id="topicarticle">{topicArticle.title} </strong>
-
-                    <p>
-                      <small id="topiccreate">{topicArticle.created_by}</small>
-                    </p>
-
-                    {/* <p>{topicArticle.votes}</p> */}
-                  </NavLink>
                 </div>
-              </li>
+                <div className="column is-three-quarters">
+                  <div
+                    className="box"
+                    style={{ height: "60%", marginTop: "0%" }}
+                  >
+                    <NavLink
+                      to={`/articles/${topicArticle._id}`}
+                      key={topicArticle._id}
+                    >
+                      <strong id="topicarticle">{topicArticle.title} </strong>
+
+                      <p>
+                        <small id="topiccreate">
+                          {topicArticle.created_by}
+                        </small>
+                      </p>
+
+                      {/* <p>{topicArticle.votes}</p> */}
+                    </NavLink>
+                  </div>
+                </div>
+              </div>
             );
           })}
       </div>

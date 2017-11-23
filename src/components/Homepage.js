@@ -6,7 +6,7 @@ import VoteUpDown from "./Votes";
 import fetchArticles from "../actions/articles.action";
 import fetchTopicArticles from "../actions/topicArticles.action";
 import Loader from "./Loading";
-import "./Homepage.css";
+// import "./Homepage.css";
 
 class Homepage extends React.Component {
   constructor(props) {
@@ -21,20 +21,31 @@ class Homepage extends React.Component {
     const { articles, loading, error } = this.props;
     return (
       <div className="container">
+        <br />
         {articles
           .sort(function(a, b) {
             return b.votes - a.votes;
           })
           .map(article => (
-            <li key={article._id} className="box">
-              <VoteUpDown votes={article.votes} />
-              <NavLink to={`/articles/${article._id}`} key={article._id}>
-                <strong className="center" id="hometext">
-                  {article.title}{" "}
-                </strong>
-                {/* <p>{article.votes}</p> */}
-              </NavLink>
-            </li>
+            <div className="columns">
+              <div
+                key={article._id}
+                className="box"
+                style={{ marginTop: "1%", marginBottom: "5%" }}
+              >
+                <VoteUpDown votes={article.votes} />
+              </div>
+              <div className="column is-three-quarters">
+                <div className="box" style={{ height: "60%", marginTop: "0%" }}>
+                  <NavLink to={`/articles/${article._id}`} key={article._id}>
+                    <strong className="center" id="hometext">
+                      {article.title}{" "}
+                    </strong>
+                    {/* <p>{article.votes}</p> */}
+                  </NavLink>
+                </div>
+              </div>
+            </div>
           ))}
       </div>
     );

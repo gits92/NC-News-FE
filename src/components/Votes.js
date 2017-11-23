@@ -1,5 +1,5 @@
 import React from "react";
-import "./Votes.css";
+// import "./Votes.css";
 
 class VoteUpDown extends React.Component {
   constructor() {

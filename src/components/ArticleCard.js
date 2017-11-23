@@ -7,7 +7,7 @@ import VoteUpDown from "./Votes";
 import CommentForm from "./CommentForm";
 import CommentList from "./CommentList";
 import axios from "axios";
-import "./ArticleCard.css";
+// import "./ArticleCard.css";
 const API_URL = "https://s-sharda-nc.herokuapp.com/api";
 
 class ArticleCard extends React.Component {

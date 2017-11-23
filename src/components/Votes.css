@@ -1,5 +1,6 @@
 #votebox {
-  float: left;
+  display: flex;
+  justify-content: flex-start;
 }
 #votescore {
   font-size: 120%;
@@ -7,10 +8,10 @@
   font-weight: bold;
 }
 #upbutton {
-  width: 60px;
-  height: 30px;
+  width: 10%;
+  height: 30%;
 }
 #downbutton {
-  width: 80px;
-  height: 30px;
+  width: 10%;
+  height: 30%;
 }
