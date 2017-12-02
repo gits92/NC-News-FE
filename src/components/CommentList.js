@@ -16,28 +16,37 @@ class CommentList extends React.Component {
   render() {
     const comment = this.props.comment;
     return (
-      <div className="box">
-        <p>{comment.body}</p>
-
-        <p>
-          <small>{comment.created_by}</small>
-        </p>
-
-        <p>
-          <div className="box" style={{ marginTop: "1%", marginBottom: "5%" }}>
+      <div className="container">
+        <div className="columns">
+          <div className="box" style={{ marginTop: "1%", marginBottom: "10%" }}>
             <VoteUpDown id="votecomments" votes={comment.votes} />
           </div>
-          <small> .</small>
-          <input
-            id="deletebutton"
-            type="submit"
-            className="button is-danger is-outlined"
-            value="Delete"
-            name={comment._id}
-            onClick={this.handleDeleteSubmit}
-          />
-        </p>
-        <p />
+          <div className="column is-two-thirds">
+            <div
+              className="box"
+              style={{ height: "80%", marginTop: "0%", marginBottom: "2%" }}
+            >
+              {comment.body}
+
+              <p>
+                <small>{comment.created_by}</small>
+              </p>
+            </div>
+          </div>
+
+          <div className="box" style={{ marginTop: "1%", marginBottom: "10%" }}>
+            <input
+              id="deletebutton"
+              type="submit"
+              className="button is-danger is-outlined"
+              value="Delete"
+              name={comment._id}
+              onClick={this.handleDeleteSubmit}
+            />
+          </div>
+
+          <p />
+        </div>
       </div>
     );
   }
