@@ -1,8 +1,12 @@
-#articletext {
+/* #articletext {
   text-align: center;
   color: black;
 }
 
 #articletitle:link {
   color: black;
+} */
+
+#votebuttons {
+  float: left;
 }

@@ -20,7 +20,7 @@ class Topic extends React.Component {
         {topics.map(topic => {
           return (
             <NavLink id="topictitles" to={`/topics/${topic.title}/articles`}>
-              {topic.title}{" "}
+              <span>{topic.title} </span>
             </NavLink>
           );
         })}

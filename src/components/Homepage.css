@@ -1,11 +1,7 @@
 #hometext {
-  position: relative;
-
-  text-align: center;
-
-  color: red;
+  color: black;
 }
 
 #hometext:hover {
-  color: black;
+  color: red;
 }

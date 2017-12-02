@@ -6,7 +6,7 @@ import VoteUpDown from "./Votes";
 import fetchArticles from "../actions/articles.action";
 import fetchTopicArticles from "../actions/topicArticles.action";
 import Loader from "./Loading";
-// import "./Homepage.css";
+import "./Homepage.css";
 
 class Homepage extends React.Component {
   constructor(props) {

@@ -25,6 +25,10 @@
   font-family: Courier New, Courier, monospace;
 }
 
+#titlecolor span {
+  background-color: white;
+}
+
 .App-intro {
   font-size: large;
 }

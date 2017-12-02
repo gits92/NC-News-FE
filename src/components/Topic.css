@@ -9,5 +9,8 @@
   text-align: center;
 }
 #topictitles:hover {
-  color: white;
+  color: red;
+}
+#topictitles span {
+  background-color: white;
 }

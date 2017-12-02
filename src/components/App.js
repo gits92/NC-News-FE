@@ -17,7 +17,9 @@ class App extends Component {
             <Navbar />
             <Topic />
             <div className="App-title">
-              <p>Welcome to Northcoders News</p>
+              <p id="titlecolor">
+                <span>Welcome to Northcoders News</span>
+              </p>
             </div>
           </header>
 

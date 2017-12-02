@@ -7,7 +7,7 @@ import VoteUpDown from "./Votes";
 import CommentForm from "./CommentForm";
 import CommentList from "./CommentList";
 import axios from "axios";
-// import "./ArticleCard.css";
+import "./ArticleCard.css";
 const API_URL = "https://s-sharda-nc.herokuapp.com/api";
 
 class ArticleCard extends React.Component {
@@ -61,7 +61,9 @@ class ArticleCard extends React.Component {
                     <small>{article.created_by}</small>
                   </p>
                   {/* <p>{article.votes}</p> */}
-                  <VoteUpDown votes={article.votes} />
+                  <p id="votebuttons">
+                    <VoteUpDown votes={article.votes} />
+                  </p>
                   <br />
                   <section>
                     <CommentForm
