@@ -4,7 +4,7 @@ import { connect } from "react-redux";
 import { Redirect, NavLink } from "react-router-dom";
 import fetchTopicArticles from "../actions/topicArticles.action";
 import VoteUpDown from "./Votes";
-// import "./TopicArticles.css";
+import "./TopicArticles.css";
 
 class TopicArticles extends React.Component {
   componentDidMount() {
@@ -44,11 +44,13 @@ class TopicArticles extends React.Component {
                       to={`/articles/${topicArticle._id}`}
                       key={topicArticle._id}
                     >
-                      <strong id="topicarticle">{topicArticle.title} </strong>
+                      <strong id="topicarticle">
+                        <span>{topicArticle.title}</span>
+                      </strong>
 
                       <p>
                         <small id="topiccreate">
-                          {topicArticle.created_by}
+                          <span>{topicArticle.created_by}</span>
                         </small>
                       </p>
 

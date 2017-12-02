@@ -24,7 +24,9 @@ class CommentList extends React.Component {
         </p>
 
         <p>
-          <VoteUpDown votes={comment.votes} />
+          <div className="box" style={{ marginTop: "1%", marginBottom: "5%" }}>
+            <VoteUpDown id="votecomments" votes={comment.votes} />
+          </div>
           <small> .</small>
           <input
             id="deletebutton"
